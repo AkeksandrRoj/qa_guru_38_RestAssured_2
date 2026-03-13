@@ -24,7 +24,7 @@ public class WdHubStatusTests extends TestBase {
     }
 
     @Test
-    void fieldMessageContentTest() {
+    void fieldMessageContentRightStringTest() {
         given()
                 .auth().basic("user1", "1234")
                 .log().uri()
@@ -38,7 +38,7 @@ public class WdHubStatusTests extends TestBase {
     }
 
     @Test
-    void fieldReadyContentTest() {
+    void fieldReadyContentTrueTest() {
         given()
                 .auth().basic("user1", "1234")
                 .log().uri()
@@ -92,7 +92,7 @@ public class WdHubStatusTests extends TestBase {
     }
 
     @Test
-    void loginValueOtherNegativeTest() {
+    void loginValueWrongNegativeTest() {
         given()
                 .auth().basic("Other", "1234")
                 .log().uri()
@@ -105,9 +105,9 @@ public class WdHubStatusTests extends TestBase {
     }
 
     @Test
-    void passwordValueOtherNegativeTest() {
+    void passwordValueWrongNegativeTest() {
         given()
-                .auth().basic("Other", "5555")
+                .auth().basic("Other", "1234")
                 .log().uri()
                 .log().headers()
                 .when()
